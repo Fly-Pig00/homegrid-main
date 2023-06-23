@@ -1,0 +1,57 @@
+.product{
+    @apply py-10 sm:py-20 ;
+
+    &__main{
+        @apply flex sm:flex-row flex-col justify-center items-start sm:items-start m-auto;
+
+        &Img{
+            @apply md:flex-1 max-w-sm min-h-[384px] relative;
+        }
+
+        &Description{
+            @apply md:flex-1 max-w-full md:max-w-sm sm:w-2/5 md:w-auto md:ml-20 sm:ml-10 flex flex-col space-y-5;
+
+            h1{
+                @apply font-normal uppercase;
+            }
+            &--details{
+                @apply py-5 border-t border-b border-neutral-600;
+            }
+            a{
+                @apply flex pt-5 font-bold items-center justify-end;
+                svg{
+                    @apply ml-2 fill-black;
+                }
+                &:hover{
+                    @apply text-accent;
+                    svg{
+                        @apply fill-accent;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__features{
+        @apply my-20 space-y-10;
+
+        h2{
+            @apply uppercase font-normal text-center;
+        }
+
+        &Description{
+            @apply sm:flex flex-col sm:flex-row justify-center items-center sm:space-x-5 md:space-x-20;
+
+            p{
+                @apply flex-auto border-b border-neutral-600 sm:max-w-md pb-5 h-max;
+            }
+        }
+
+        &Img{
+            @apply sm:max-w-xs md:mb-auto w-full h-48 mb-10 flex justify-center relative;
+        }
+
+    }
+
+}

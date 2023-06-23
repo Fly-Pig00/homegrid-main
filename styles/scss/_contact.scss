@@ -1,0 +1,65 @@
+.contact {
+  @apply flex flex-col space-y-10 py-20;
+
+  .emails {
+    @apply text-accent;
+  }
+
+  &__form {
+    &--fieldGroup {
+      @apply sm:flex sm:space-x-10 mb-3;
+    }
+    &--field {
+      @apply border-b border-neutral-400 outline-0 focus:bg-neutral-100 p-1;
+
+      &Container {
+        @apply flex flex-col flex-1 py-2;
+
+        label {
+          @apply font-medium text-sm;
+        }
+      }
+    }
+    &--error {
+      @apply text-error text-xs;
+
+      &Container {
+        @apply h-5 flex items-center;
+      }
+    }
+    &--button {
+      @apply btn bg-black hover:bg-accent border-none text-white;
+    }
+  }
+
+  &__map {
+    @apply w-full sm:shadow-md rounded border-secondary sm:border overflow-hidden;
+    &--buttons {
+      @apply flex-1 hover:bg-accent shadow-sm;
+    }
+    &--tabs {
+      @apply flex w-full h-10 sm:h-14 relative;
+    }
+    &Sales {
+      @apply rounded-t-md relative z-10 -mt-1 shadow-md overflow-hidden;
+      &--tabs {
+        @apply flex h-8 space-x-1 sm:h-10 bg-[#f5f5f5] rounded-t-md border-t border-l border-r border-secondary;
+      }
+      &--buttons {
+        @apply min-w-[50px] w-max sm:px-3 sm:w-max shadow-md border-t border-l border-r border-secondary rounded-t-lg capitalize text-sm sm:whitespace-nowrap leading-3 sm:leading-normal;
+      }
+      &--mapContainer {
+        @apply h-full max-h-[850px] relative bg-primary;
+      }
+    }
+    &Distributors {
+      @apply h-[279px] sm:h-[637px] relative bg-primary;
+    }
+  }
+
+  &__techSupport {
+    p {
+      @apply text-accent text-lg font-medium text-center;
+    }
+  }
+}

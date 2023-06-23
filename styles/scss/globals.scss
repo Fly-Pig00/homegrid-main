@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply transition ease-in-out;
+}
+
+@layer base {
+  .h0 {
+    @apply text-3xl font-bold md:text-5xl;
+  }
+
+  h1,
+  .h1 {
+    @apply text-2xl font-bold md:text-4xl;
+  }
+
+  h2,
+  .h2 {
+    @apply text-xl font-bold md:text-3xl;
+  }
+
+  h3,
+  .h3 {
+    @apply text-lg font-bold md:text-2xl;
+  }
+
+  h4,
+  .h4 {
+    @apply text-base font-bold md:text-lg;
+  }
+
+  body,
+  .p,
+  p {
+    @apply text-sm md:text-base min-h-[24px];
+  }
+
+  a {
+    @apply block text-black hover:text-accent active:bg-primary active:text-white transition; // tw-elements a tags are set to in-line
+  }
+
+  header {
+    @apply relative z-40;
+  }
+
+  main {
+    @apply bg-primary min-h-screen text-black;
+  }
+
+  footer {
+    @apply pt-10
+        pb-5
+        bg-secondary
+        flex
+        flex-col
+        justify-end
+        items-center
+        space-y-5;
+  }
+}
+
+@layer components {
+  .desktopNav {
+    @apply hidden sm:flex bg-secondary h-16 text-black;
+
+    & > ul {
+      @apply menu menu-horizontal justify-end w-full text-black flex space-x-10 pr-5;
+
+      & > li {
+        @apply capitalize;
+
+        & > a {
+          @apply hover:text-accent bg-transparent p-0;
+        }
+      }
+    }
+  }
+
+  .mobileNav {
+    @apply sm:hidden flex justify-center bg-secondary w-full h-16 z-40 text-black;
+
+    &-button {
+      @apply absolute top-5 right-5;
+    }
+    &__menu {
+      @apply fixed  bg-secondary h-screen w-screen overflow-y-scroll justify-center;
+      ul {
+        @apply h-max py-10 flex-col items-center space-y-10;
+        & > li {
+          @apply w-full;
+
+          & > a {
+            @apply text-2xl hover:text-accent capitalize;
+          }
+        }
+      }
+    }
+  }
+
+  .headerLogo {
+    @apply relative w-48 h-20 sm:ml-5;
+  }
+  .subMenu {
+    span {
+      @apply bg-transparent hover:text-accent p-0;
+    }
+    ul {
+      @apply bg-primary shadow;
+      li {
+        a {
+          @apply bg-transparent hover:text-accent;
+        }
+      }
+    }
+
+    &-mobile {
+      h4,
+      input {
+        @apply text-2xl capitalize font-normal p-0 min-h-0 h-10 col-start-1 row-start-1;
+      }
+      div {
+        a {
+          @apply py-5 text-xl z-40;
+        }
+      }
+    }
+  }
+
+  .page {
+    @apply mx-auto w-10/12 max-w-7xl;
+  }
+  .pageHeader {
+    @apply relative py-10;
+    h1 {
+    }
+  }
+  .footer {
+    &__container {
+      @apply w-10/12 sm:flex;
+    }
+
+    &__logo {
+      @apply relative w-40 sm:w-full h-20 sm:h-24 sm:flex flex-1 justify-start sm:justify-center items-center mb-5;
+    }
+
+    &__links {
+      @apply flex-1 text-left sm:flex sm:space-x-20 justify-center;
+
+      a {
+        @apply hover:text-accent;
+      }
+    }
+    &__socials {
+      @apply flex space-x-3 items-center sm:justify-center w-full;
+    }
+  }
+}
+
+@import "./home";
+@import "./about";
+@import "./product";
+@import "./contact";
+@import "./faq";
+@import "./downloads";
+@import "./press";
